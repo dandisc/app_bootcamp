@@ -29,21 +29,20 @@ server.get(
     userLoggedIn.validateLoggedIn,
     consentTracking.consent,
     function (req, res, next) {
-        var CustomerMgr = require('dw/customer/CustomerMgr');
-        var Resource = require('dw/web/Resource');
-        var URLUtils = require('dw/web/URLUtils');
-        var accountHelpers = require('*/cartridge/scripts/account/accountHelpers');
-        var reportingUrlsHelper = require('*/cartridge/scripts/reportingUrls');
-        var reportingURLs;
+        const Resource = require('dw/web/Resource');
+        const URLUtils = require('dw/web/URLUtils');
+
+        let reviewForm = server.forms.getForm('reviewForm');
 
         res.render('account/review/addReview', {
+            reviewForm: reviewForm,
             breadcrumbs: [
                 {
                     htmlValue: Resource.msg('global.home', 'common', null),
                     url: URLUtils.home().toString()
                 },
                 {
-                    htmlValue: Resource.msg('label.review', 'account', null),
+                    htmlValue: Resource.msg('label.review', 'forms', null),
                     url: '#'
                 }
             ]

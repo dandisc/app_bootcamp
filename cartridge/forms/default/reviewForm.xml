@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<form xmlns="http://www.demandware.com/xml/form/2008-04-19">
+
+    <field formid="review" label="label.input.review" type="string" mandatory="true"
+           min-length="20" missing-error="error.message.required" range-error="error.message.20ormore"/>
+
+
+    <field formid="stars" label="label.input.review.rating" type="integer" mandatory="true"
+           missing-error="error.message.required" >
+        <options>
+            <option optionid="" label="select.default.rating" value=""/>
+            <option optionid="01" label="01" value="01"/>
+            <option optionid="02" label="02" value="02"/>
+            <option optionid="03" label="03" value="03"/>
+            <option optionid="04" label="04" value="04"/>
+            <option optionid="05" label="05" value="05"/>
+        </options>
+    </field>
+
+</form>

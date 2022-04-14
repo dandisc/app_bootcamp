@@ -19,9 +19,11 @@
         </isif>
         <!---Payment--->
         <isinclude template="account/paymentCard"/>
-        
+
         <!---Review--->
-        <isinclude template="account/review"/>
-        
+        <isif condition="${!pdict.reviewFlag}">
+            <isinclude template="account/review"/>
+        </isif>
+
     </div>
 </div>
