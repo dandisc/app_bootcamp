@@ -1,11 +1,11 @@
 <isset name="reviewForm" value="${pdict.reviewForm}" scope="page" />
 <form
-    action="${URLUtils.url('PaymentInstruments-SavePayment', 'UUID', pdict.UUID)}"
+    action="${URLUtils.url('Review-SaveReview')}"
     class="payment-form"
     method="POST"
-    name="payment-form" ${pdict.paymentForm.attributes}>
+    name="review-form" ${pdict.reviewForm.attributes}>
 
-    <!-- Name on Card -->
+    <!-- Review String -->
     <div class="form-group
         <isif condition="${reviewForm.review.mandatory === true}">required</isif>">
         <label class="form-control-label" for="review">
@@ -19,7 +19,7 @@
     </div>
 
 
-    <!-- Card Number -->
+    <!-- Vote -->
     <div class="form-group
         <isif condition="${reviewForm.stars.mandatory === true}">required</isif>">
         <label class="form-control-label" for="stars">
@@ -34,7 +34,7 @@
             </isloop>
         </select>
         <div class="invalid-feedback">
-            <isprint value="${pdict.paymentForm.cardNumber.error}" encoding="htmlcontent" />
+            <isprint value="${reviewForm.stars.error}" encoding="htmlcontent" />
         </div>
     </div>
 
