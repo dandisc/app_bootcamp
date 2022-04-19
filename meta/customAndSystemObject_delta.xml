@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<metadata xmlns="http://www.demandware.com/xml/impex/metadata/2006-10-31">
+    <type-extension type-id="Profile">
+        <custom-attribute-definitions>
+            <attribute-definition attribute-id="reviewDate">
+                <display-name xml:lang="x-default">Review Date</display-name>
+                <type>datetime</type>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+            </attribute-definition>
+            <attribute-definition attribute-id="reviewFlag">
+                <display-name xml:lang="x-default">Review Flag</display-name>
+                <type>boolean</type>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+            </attribute-definition>
+        </custom-attribute-definitions>
+        <attribute-group group-id="reviewInfo">
+                <display-name xml:lang="x-default">Review Info</display-name>
+                <attribute attribute-id="reviewFlag"/>
+                <attribute attribute-id="reviewDate"/>
+            </attribute-group>
+    </type-extension>
+    <custom-type type-id="review">
+        <display-name xml:lang="x-default">Review</display-name>
+        <staging-mode>no-staging</staging-mode>
+        <storage-scope>site</storage-scope>
+        <key-definition attribute-id="reviewID">
+            <type>string</type>
+            <min-length>0</min-length>
+        </key-definition>
+        <attribute-definitions>
+            <attribute-definition attribute-id="reviewStars">
+                <display-name xml:lang="x-default">Review Stars</display-name>
+                <type>int</type>
+                <localizable-flag>false</localizable-flag>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+            </attribute-definition>
+            <attribute-definition attribute-id="reviewText">
+                <display-name xml:lang="x-default">Review Text</display-name>
+                <type>text</type>
+                <localizable-flag>false</localizable-flag>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+            </attribute-definition>
+        </attribute-definitions>
+        <group-definitions>
+            <attribute-group group-id="reviewInfo">
+                <display-name xml:lang="x-default">Review Info</display-name>
+                <attribute attribute-id="reviewText"/>
+                <attribute attribute-id="reviewStars"/>
+                <attribute attribute-id="reviewID"/>
+            </attribute-group>
+        </group-definitions>
+    </custom-type>
+</metadata>
